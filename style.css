@@ -1,0 +1,672 @@
+/* base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #f47500;
+  --bg-secondary: #fafafa;
+  --font-dark: #222;
+  --font-white: #fff;
+}
+
+body {
+  font-family: 'Ruda', sans-serif;
+  background-color: var(--bg-secondary);
+}
+
+.custom-fonts {
+  font-family: 'Covered By Your Grace', cursive;
+}
+
+h1 {
+  font-family: 'Ruda', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+h3 {
+  font-family: 'Ruda', sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 22px;
+}
+
+p {
+  font-size: 14px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none !important;
+  color: var(--font-dark) !important;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.container {
+  max-width: 1320px !important;
+  margin: 0 auto !important;
+}
+
+/* header */
+.header-top {
+  background-color: var(--bg-color);
+}
+
+#logo {
+  margin-bottom: 5px;
+}
+
+#searchbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+
+#searchbar input {
+  width: 90%;
+  border: none;
+  outline: none;
+}
+
+#searchbar input[placeholder] {
+  font-size: 12px;
+  line-height: 1em;
+  font-weight: 700;
+}
+
+#search-icon {
+  line-height: 1em;
+  width: 25px;
+  text-align: center;
+  padding: 5px;
+  border-left: 1px solid #ddd;
+}
+
+#searchbar .angle-left {
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-right: 7px solid #fff;
+  position: absolute;
+  left: -6px;
+  top: 11px;
+}
+
+ul.header-right {
+  display: flex;
+  float: right;
+}
+
+ul.header-right li {
+  margin-left: 30px;
+}
+
+ul.header-right li a {
+  display: flex;
+  align-items: center;
+}
+
+ul.header-right li a i {
+  color: #fff;
+  font-size: 20px;
+  margin-right: 6px;
+}
+
+ul.header-right li a span {
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+}
+
+ul.header-right li:hover a {
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+.header-bottom {
+  background-color: #fff !important;
+}
+
+.header-bottom ul.header-right li a i {
+  color: var(--bg-color);
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.header-bottom ul.header-right li {
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+.header-bottom ul.header-right {
+  padding: 10px 0;
+}
+
+ul.main-menu {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+
+ul.main-menu li {
+  margin-right: 22px;
+  position: relative;
+}
+
+ul.main-menu li:hover>a {
+  color: var(--bg-color) !important;
+  transition: 0.3s;
+}
+
+.link-active a {
+  color: var(--bg-color) !important;
+}
+
+ul.sub-menu {
+  position: absolute;
+  background-color: #fff;
+  top: 100%;
+  width: 170px;
+  z-index: 999;
+  padding: 15px 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+ul.main-menu li:hover ul.sub-menu {
+  opacity: 1;
+  visibility: visible;
+  transition: 0.4s ease;
+}
+
+ul.sub-menu li {
+  margin: 0;
+}
+
+ul.sub-menu li a {
+  display: block;
+  padding: 5px 10px;
+  font-size: 13px;
+}
+
+/* slider */
+.food {
+  background-color: #fff;
+  display: inline-block;
+  position: relative;
+  margin: 0 auto;
+  bottom: 15px;
+  padding-right: 10px;
+}
+
+.food i {
+  background-color: var(--bg-color);
+  padding: 5px;
+  color: var(--font-white);
+}
+
+.food a {
+  text-transform: uppercase;
+}
+
+h3.card-title {
+  font-size: 18px;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+h3.card-title::after {
+  position: absolute;
+  content: "";
+  width: 70%;
+  height: 1px;
+  background: #ddd;
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.comments {
+  display: flex;
+  justify-content: space-around;
+}
+
+.user span, .comment i, .comment span {
+  font-size: 13px;
+  color: #b3b2b2;
+}
+
+.user a i {
+  font-size: 20px;
+  color: #b3b2b2;
+}
+
+.comment i {
+  color: red;
+}
+
+.slider-item.card {
+  height: 450px;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+}
+
+.slider button.owl-prev, .slider button.owl-next {
+  width: 40px;
+  height: 80px;
+  background-color: #fff !important;
+  border-radius: 4px;
+  position: absolute;
+  top: 35%;
+  opacity: 0;
+}
+
+.slider button.owl-prev {
+  left: -50px;
+}
+
+.slider button.owl-next {
+  right: 0px;
+}
+
+.slider button.owl-prev span, .slider button.owl-next span {
+  font-size: 30px;
+}
+
+.slider:hover button.owl-prev {
+  opacity: 1;
+  left: 15px;
+  transition: 0.6s ease;
+}
+
+.slider:hover button.owl-next {
+  opacity: 1;
+  right: 15px;
+  transition: 0.6s ease;
+}
+
+/* about */
+.about-wrapper {
+  background-color: var(--bg-secondary);
+}
+
+.wrap-content {
+  background-color: #fff;
+  text-align: center;
+  padding: 20px 15px;
+  margin-top: 50px;
+}
+
+.wrap-content p {
+  font-size: 16px;
+}
+
+/* category */
+.category-wrapper .food {
+  background-color: var(--bg-color);
+  bottom: 140px;
+  z-index: 99999;
+}
+
+.category-wrapper .food a {
+  color: var(--font-white) !important;
+  font-size: 13px !important;
+}
+
+.category-wrapper .card {
+  position: relative;
+}
+
+.category-wrapper .card-body {
+  color: var(--font-white);
+  position: absolute;
+  z-index: 999;
+  top: 45%;
+  left: 0;
+  background-color: #482d12ab;
+  margin: 0 10px;
+  padding: 20px 0;
+}
+
+h3.category-title {
+  font-size: 30px;
+  font-style: italic;
+}
+
+h3.category-title a {
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+}
+
+h3.category-title a:hover {
+  color: var(--bg-color) !important;
+  transition: 0.3s;
+}
+
+h3.category-title.custom-fonts span {
+  color: var(--bg-color);
+}
+
+/* posts */
+.post-wrapper .food {
+  bottom: 30px;
+}
+
+.sidebar h3.card-title {
+  font-size: 16px;
+}
+
+.sidebar h3.card-title::after {
+  width: 90%;
+  height: 2px;
+  background: var(--bg-color);
+  bottom: -2px;
+  margin: 0;
+}
+
+.sidebar .card-body p strong {
+  border-bottom: 1px solid var(--bg-color);
+}
+
+.icon {
+  text-align: center;
+}
+
+.icon i {
+  background: var(--bg-color);
+  color: var(--font-white);
+  font-size: 16px;
+  padding: 10px;
+}
+
+.sidebar .card-body input {
+  display: block;
+  width: 100%;
+  padding: 5px 10px;
+  outline: none;
+  border: 1px solid #ddd;
+  margin-top: 15px;
+}
+
+.sidebar .card-body input[placeholder] {
+  font-size: 12px;
+}
+
+.sidebar .card-body button {
+  display: block;
+  width: 100%;
+  background: var(--bg-color);
+  border: none;
+  font-size: 12px;
+  padding: 5px 10px;
+  color: var(--font-white);
+  text-transform: uppercase;
+}
+
+.image-with-badge span {
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background: var(--bg-color);
+  color: var(--font-white);
+  padding: 10px;
+  text-align: center;
+  font-weight: 700;
+  border: 2px solid #fff;
+  left: -20px;
+  bottom: 55px;
+}
+
+.image-with-badge {
+  width: 90px;
+  height: 80px;
+  margin-top: 14px;
+}
+
+.foods-component .card-body p {
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.foods-component .horizontal {
+  border: none;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20px;
+}
+
+.horizontal i {
+  color: red;
+}
+
+.post-wrapper ul.pagination li:hover a {
+  background-color: var(--bg-color) !important;
+  color: var(--font-white) !important;
+  border: 1px solid #222 !important;
+  transition: 0.3s;
+}
+
+.post-wrapper ul.pagination li.active a {
+  background-color: var(--bg-color) !important;
+  color: var(--font-white) !important;
+}
+
+.post-wrapper ul.pagination li a {
+  font-size: 13px !important;
+}
+
+h1.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 60px;
+}
+
+img.image {
+  width: 297px;
+  height: 200px;
+}
+
+.single-item-blog span {
+  display: block;
+  font-size: 13px;
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+a.blog-button {
+  background-color: #f47500;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  color: #fff !important;
+  padding-right: 15px;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.single-item-blog {
+  width: 297px;
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.blogs {
+  text-align: center;
+}
+
+.blog-content {
+  text-align: left;
+}
+
+/* social */
+.social-wrapper h5.card-title {
+  font-size: 30px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--bg-color);
+}
+
+.social-wrapper .card-body a span {
+  width: 20px;
+  display: inline-block;
+  height: 20px;
+  text-align: center;
+  background-color: var(--bg-color);
+  color: var(--font-white);
+  border-radius: 100%;
+  padding: 4px;
+  margin-left: 7px;
+  line-height: 1em;
+  font-size: 13px;
+}
+
+.social-wrapper .card-body a {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--font-dark) !important;
+}
+
+
+
+/* footer style */
+.footer-widgets {
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.footer-area {
+  padding: 50px 0;
+  background-color: #000;
+}
+
+h5.widgets-title {
+  padding-bottom: 10px;
+  border-bottom: 3px solid #e61f1f;
+}
+
+h5.widgets-title span {
+  font-size: 13px;
+  color: #ffffff;
+  background-color: #f47500 !important;
+  padding: 5px 10px;
+  border-radius: 2px;
+}
+
+.widgets-body img {
+  width: 120px;
+  margin-bottom: 15px;
+}
+
+p.widgets-text {
+  color: #fdfdfd;
+  text-align: justify;
+  font-size: 13px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.widgets-icons a i{
+  font-size: 18px;
+  padding: 8px;
+  color: #fff;
+}
+
+.widgets-icons a {
+  display: inline-block;
+  padding: 4px;
+}
+
+a.facebook {
+  background: #3b5998;
+}
+
+a.twitter {
+  background-color: #55acee;
+}
+
+a.instagram {
+  background: #E1306C;
+}
+
+a.youtube {
+  background: #e02a20;
+}
+
+.widgets-icons a {
+  display: inline-block;
+  padding: 4px;
+  text-align: center;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.widgets-icons {
+  display: flex;
+}
+
+ul.foods-blog li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+span.post-no.rounded-circle {
+  width: 50px;
+  height: 48px;
+  background: #f47500;
+  padding: 8px;
+  position: absolute;
+  font-weight: 800;
+  color: #fff;
+  border: 4px solid #fff;
+  top: 25px;
+  left: -25px;
+}
+
+ul.foods-blog li h6.article-title a {
+  color: #fff!important;
+  font-size: 15px!important;
+}
+
+.widgets-likes{
+  text-align: left;
+}
+
+.widgets-likes span{
+  color: #fff;
+  font-size: 13px;
+}
+
+.widgets-likes span i {
+  color: red;
+  font-size: 13px;
+  font-weight: 800;
+  margin-right: 10px;
+}
+
+.widgets-likes .sleft {
+  color: #fff;
+  font-size: 12px;
+}
